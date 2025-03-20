@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+section {
+    margin-top: 50px;
+}
+
+/* زر MetaMask */
+#connectWalletBtn {
+    background-color: #ff8c00; /* برتقالي مميز لـ MetaMask */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+#connectWalletBtn:hover {
+    background-color: #e07b00; /* لون أغمق عند التحويم */
+}
+
+/* تنسيق عنوان المحفظة */
+#walletAddress {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* زر عام */
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+}

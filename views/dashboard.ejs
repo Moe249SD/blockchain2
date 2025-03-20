@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>لوحة تحكم المستخدم</h1>
+        <nav>
+            <a href="/">الرئيسية</a>
+            <a href="/logout">تسجيل الخروج</a>
+        </nav>
+    </header>
+    <section>
+        <h2>مرحبًا، <%= typeof user !== "undefined" ? user.username : "ضيف" %></h2>
+        <p>يمكنك إدارة مستندات التأمين هنا.</p>
+        
+        <h3>رفع مستند تأميني</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">رفع</button>
+        </form>
+        
+        <a href="/files" class="btn">عرض المستندات</a>
+    </section>
+</body>
+</html>

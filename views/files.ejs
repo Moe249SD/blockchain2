@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>المستندات</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>المستندات المرفوعة</h2>
+    <ul>
+        <% files.forEach(file => { %>
+            <li>
+                <a href="/file/<%= file.filename %>"><%= file.filename %></a>
+            </li>
+        <% }) %>
+    </ul>
+    <form action="/verify" method="POST">
+        <input type="text" name="hash" placeholder="أدخل تجزئة المستند">
+        <button type="submit">تحقق</button>
+    </form>
+    
+</body>
+</html>

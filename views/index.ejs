@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة تأمين الوثائق</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>نظام إدارة التأمين بالبلوكشين</h1>
+        <nav>
+            <a href="/">الرئيسية</a>
+            <a href="/dashboard">لوحة التحكم</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>مرحبًا بك في منصة التأمين الذكي</h2>
+        <p>استخدم تقنية البلوكشين لحماية بياناتك التأمينية</p>
+        <a href="/dashboard" class="btn">الدخول إلى لوحة التحكم</a>
+        
+        <!-- زر الاتصال بـ MetaMask -->
+        <br><br>
+        <button id="connectWalletBtn">🔗 الاتصال بـ MetaMask</button>
+        <p id="walletAddress"></p>
+    </section>
+
+    <script>
+        async function connectWallet() {
+            if (window.ethereum) {
+                try {
+                    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+                    document.getElementById("walletAddress").innerText = "🟢 متصل: " + accounts[0];
+                } catch (error) {
+                    console.error("❌ فشل الاتصال بـ MetaMask:", error);
+                }
+            } else {
+                alert("❌ يرجى تثبيت MetaMask!");
+            }
+        }
+
+        document.getElementById("connectWalletBtn").addEventListener("click", connectWallet);
+    </script>
+</body>
+</html>
